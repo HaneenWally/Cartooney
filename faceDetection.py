@@ -10,9 +10,9 @@ import cv2
 import numpy as np
 
 # Import Classifier for Face and Eye Detection
-face_classifier = cv2.CascadeClassifier("//home//ehabel-sherif//anaconda3//share//OpenCV//haarcascades//haarcascade_frontalface_default.xml")
-eye_classifier = cv2.CascadeClassifier ("//home//ehabel-sherif//anaconda3//share//OpenCV//haarcascades//haarcascade_eye.xml")
-mouth_classifier=cv2.CascadeClassifier("//home//ehabel-sherif//anaconda3//share//OpenCV//haarcascades//haarcascade_smile.xml")
+face_classifier = cv2.CascadeClassifier("haarcascades//haarcascade_frontalface_default.xml")
+eye_classifier = cv2.CascadeClassifier ("haarcascades//haarcascade_eye.xml")
+mouth_classifier = cv2.CascadeClassifier("haarcascades//haarcascade_smile.xml")
 
 if face_classifier.empty():
    raise IOError('Unable to load the face cascade classifier xml file')
@@ -30,6 +30,7 @@ def face_detector (img):
     gray = np.array(gray, dtype='uint8')
     faces = face_classifier.detectMultiScale (gray,1.1, 3)
     
+    #No Faces
     if faces is ():
         return img
     
@@ -47,7 +48,7 @@ def face_detector (img):
         for (ex, ey, ew, eh) in eyes:
             cv2.rectangle(roiE_color,(ex,ey),(ex+ew,ey+eh),(0,0,255),2)
             #roi_color = cv2.flip (roi_color, 1)
-    #return roi_color
+   #return roi_color
         
 # =============================================================================
 #         #roi of mouth
@@ -60,6 +61,7 @@ def face_detector (img):
 #             cv2.rectangle(roiM_color,(mx,my),(mx+mw,my+mh),(0,255,255),2)
 #            
 # =============================================================================
+    
     cv2.imshow('img',img)
     
 img=cv2.imread('tests//419_2.jpg')
