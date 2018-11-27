@@ -5,3 +5,5 @@ class Cartoon:
     self.__img = image
     
   #Will add later
+  #GUIDELINES:
+  #Try to seperate cartoonization of objects/secene from face functions
