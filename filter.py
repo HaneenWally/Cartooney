@@ -1,4 +1,4 @@
-Class Filter:
+class Filter:
 
   def __init__(self, image):
     
