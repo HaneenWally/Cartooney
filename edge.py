@@ -1,4 +1,4 @@
-Class Edge:
+class Edge:
 
   def __init__(self, image):
   
