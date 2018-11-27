@@ -1,4 +1,4 @@
-Class Cartoon:
+class Cartoon:
 
   def __init__(self, image):
     
