@@ -1,4 +1,4 @@
-class Utilities:
+class Util:
 
   def __init__(self, image):
     
