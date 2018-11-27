@@ -1,8 +1,8 @@
-Class Noise:
+class Noise:
 
-  def __init__(self, img):
+  def __init__(self, image):
     
-    self.__image = img
+    self.__img = image
     return
   
   #apply median filter if image has impulsive nois
