@@ -1,4 +1,4 @@
-Class Face:
+class Face:
 
   def __init__(self, image):
   
